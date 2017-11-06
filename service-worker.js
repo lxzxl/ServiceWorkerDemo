@@ -11,7 +11,7 @@ self.addEventListener('install', function(event) { // 监听worker的install事�
     event.waitUntil( // 延迟install事件直至缓存初始化完成
         caches.open(CACHE_KEY)
             .then(function(cache) {
-                console.log('Opened cache');
+                console.log('Cache created');
                 return cache.addAll(CACHE_FILES);
             })
     );

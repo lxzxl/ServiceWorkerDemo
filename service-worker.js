@@ -8,7 +8,7 @@ const CACHE_FILES = [
 
 
 self.addEventListener('install', function(event) { // 监听worker的install事件
-    event.waitUntil( // 延迟install事件直至缓存初始化完成
+    event.waitUntil( // 延迟install事件直至Cache初始化完成
         caches.open(CACHE_KEY)
             .then(function(cache) {
                 console.log('Cache created');
@@ -18,7 +18,7 @@ self.addEventListener('install', function(event) { // 监听worker的install事�
 });
 
 self.addEventListener('activate', function(event) { // 监听worker的activate事件
-    event.waitUntil( // 延迟activate事件直到
+    event.waitUntil( // 延迟activate事件直到Cache初始化完成
         caches.keys().then(function(keys) {
             return Promise.all(keys.map(function(key, i) { // 清除旧版本缓存
                 if (key !== CACHE_KEY) {

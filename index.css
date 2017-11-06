@@ -1,0 +1,8 @@
+.title {
+
+}
+
+.image {
+    height: 400px;
+    background-image: url("./bg.jpg"); /*背景图片*/
+}
